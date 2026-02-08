@@ -60,5 +60,6 @@ Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots
 │
 └── 📁 src/                           # Aplicação
     ├── app.py                        # Código da aplicação
+    ├── requirements.txt              # Requisitos da aplicação
     └── README.md                     # Como reproduzir o projeto
 ```
