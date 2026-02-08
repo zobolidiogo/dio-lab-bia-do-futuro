@@ -86,11 +86,10 @@ flowchart TD
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | Streamlit |
-| Camada do Agente | Orquestração em Python |
+| Interface | Streamlit (app.py) |
 | Base de Conhecimento | JSON/CSV na pasta **data** |
-| LLM | Olama (local) |
-| Validação | Checagem de alucinações |
+| LLM | Olama (local, podendo usar o modelo de sua preferência) |
+| Validação | Prompt do sistema (app.py) |
 
 ---
 
