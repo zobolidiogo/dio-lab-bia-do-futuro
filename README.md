@@ -56,8 +56,7 @@ Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots
 │   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
 │   ├── 02-base-conhecimento.md       # Estratégia de dados
 │   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
+│   └── 04-metricas.md                # Avaliação e métricas
 │
 └── 📁 src/                           # Aplicação
     ├── app.py                        # Código da aplicação
