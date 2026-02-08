@@ -17,34 +17,29 @@ A avaliação pode ser feita de duas formas complementares:
 | **Segurança** | O agente evitou inventar informações? | Perguntar algo fora do contexto e ele admitir que não sabe |
 | **Coerência** | A resposta faz sentido para o perfil do cliente? | Sugerir investimento conservador para cliente conservador |
 
-> [!TIP]
-> Peça para 3-5 pessoas (amigos, família, colegas) testarem seu agente e avaliarem cada métrica com notas de 1 a 5. Isso torna suas métricas mais confiáveis! Caso use os arquivos da pasta `data`, lembre-se de contextualizar os participantes sobre o **cliente fictício** representado nesses dados.
-
 ---
 
-## Exemplos de Cenários de Teste
-
-Crie testes simples para validar seu agente:
+## Cenários de Teste
 
 ### Teste 1: Consulta de gastos
 - **Pergunta:** "Quanto gastei com alimentação?"
 - **Resposta esperada:** Valor baseado no `transacoes.csv`
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resultado:** [X] Correto  [ ] Incorreto
 
-### Teste 2: Recomendação de produto
-- **Pergunta:** "Qual investimento você recomenda para mim?"
-- **Resposta esperada:** Produto compatível com o perfil do cliente
-- **Resultado:** [ ] Correto  [ ] Incorreto
+### Teste 2: Recomendação de gasto/economia
+- **Pergunta:** "Eu quero comprar algo que não irei usar e está fora da curva para minha renda e gastos, devo prosseguir?"
+- **Resposta esperada:** Recomendação de não prosseguimento com algo fora da curva para o cliente
+- **Resultado:** [X] Correto  [ ] Incorreto
 
 ### Teste 3: Pergunta fora do escopo
 - **Pergunta:** "Qual a previsão do tempo?"
-- **Resposta esperada:** Agente informa que só trata de finanças
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resposta esperada:** Agente informa que só trata de controle de custos
+- **Resultado:** [X] Correto  [ ] Incorreto
 
 ### Teste 4: Informação inexistente
-- **Pergunta:** "Quanto rende o produto XYZ?"
+- **Pergunta:** "Quanto é um carro novo?"
 - **Resposta esperada:** Agente admite não ter essa informação
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resultado:** [X] Correto  [ ] Incorreto
 
 ---
 
@@ -53,19 +48,18 @@ Crie testes simples para validar seu agente:
 Após os testes, registre suas conclusões:
 
 **O que funcionou bem:**
-- [Liste aqui]
+- O agente conseguiu interpretar corretamente o histórico de transações e calcular gastos por categoria.
+- As respostas seguiram o perfil do cliente, evitando sugestões arriscadas para um usuário conservador.
+- O sistema respeitou as regras de segurança, admitindo quando não possuía informação suficiente.
+- A linguagem se manteve simples e próxima do público jovem, coerente com a persona “Jovem Finn”.
+- O agente demonstrou capacidade de alertar sobre gastos fora do padrão e risco de extrapolar o orçamento mensal.
 
 **O que pode melhorar:**
-- [Liste aqui]
+- O modelo local possui limitações para cálculos mais complexos e pode interpretar valores de forma aproximada.
+- Ainda não há autenticação real de usuário, os dados são estáticos e simulados.
+- Falta um mecanismo automático para calcular “saldo restante do mês” de forma programática.
+- Não existe histórico de conversas para aprendizado contínuo.
+- A validação anti-alucinação é baseada apenas em regras de prompt, sem camada técnica robusta.
+- Dependendo do modelo e capacidade do computador, as respostas podem demorar muito para serem geradas.
 
----
-
-## Métricas Avançadas (Opcional)
-
-Para quem quer explorar mais, algumas métricas técnicas de observabilidade também podem fazer parte da sua solução, como:
-
-- Latência e tempo de resposta;
-- Consumo de tokens e custos;
-- Logs e taxa de erros.
-
-Ferramentas especializadas em LLMs, como [LangWatch](https://langwatch.ai/) e [LangFuse](https://langfuse.com/), são exemplos que podem ajudar nesse monitoramento. Entretanto, fique à vontade para usar qualquer outra que você já conheça!
+Apesar das limitações de um protótipo acadêmico, o agente demonstrou viabilidade como ferramenta de educação financeira para jovens, cumprindo o objetivo de apoiar decisões de consumo com base em dados reais do usuário e regras de segurança contra alucinações.
